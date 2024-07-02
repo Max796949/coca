@@ -8,5 +8,6 @@ server: {
 },
 build: {
     outDir: "../dist",
-}
-})
+    emptyOutDir: true,
+},
+});

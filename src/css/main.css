@@ -1,4 +1,6 @@
 body {
-    background: #fff
+    &__title {
+        color: red;
+    }
 }
 
