@@ -1,7 +1,7 @@
-@mixin font-face($font-family, $url, $weight, $font-sryle: normal) {
+@mixin font-face($font-family, $url, $weight, $font-style: normal) {
     @font-face {
     src:
-    local('$font-family'),
+    local($font-family),
     url('/fonts/#{$url}.woff2') format('woff2');
     font-family: $font-family;
     font-weight: $weight;
