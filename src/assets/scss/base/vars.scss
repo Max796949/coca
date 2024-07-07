@@ -15,9 +15,17 @@
 
   --success-color-70: #e2f8f0b3;
 
+  --overview-bg-color: #1d1e25;
+
   --container-padding: 15px;
   --container-width: 1200px;
 
+  @include mini-desktop {
+    --container-width: 1000px;
+  }
+  @include tablet {
+    --container-width: 860px;
+  }
   @include mobile {
     --container-width: 480px;
   }
@@ -38,6 +46,8 @@
   --neutral-color-150: #fff;
 
   --success-color-70: #e2f8f033;
+
+  --overview-bg-color: #18181d;
 
   --logo-color-text: #fff;
   --logo-color-circle: #353542;
