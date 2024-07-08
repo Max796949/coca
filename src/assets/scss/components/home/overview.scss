@@ -6,9 +6,8 @@
     text-align: center;
 
     @include mobile {
-        padding: 60px 0;
+      padding: 60px 0;
     }
-
   }
 
   &__title {
@@ -21,11 +20,11 @@
     color: #fff;
 
     @include small-tablet {
-        font-size: 40px;
+      font-size: 40px;
     }
 
     @include mobile {
-        max-width: 320px;
+      max-width: 320px;
     }
   }
 
@@ -38,23 +37,21 @@
     color: #7e8492;
 
     @include tablet {
-        margin-bottom: 60px;
+      margin-bottom: 60px;
     }
 
     @include small-mobile {
-        margin-bottom: 50px;
+      margin-bottom: 50px;
     }
   }
 
   &__title,
   &__descr,
   &__item-title {
-
     @include tablet {
-        margin-right: auto;
-        margin-left: auto;
+      margin-right: auto;
+      margin-left: auto;
     }
-
   }
 
   &__list {
@@ -63,9 +60,9 @@
     gap: 56px;
 
     @include tablet {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
     }
   }
 
