@@ -41,6 +41,4 @@ export const usePriceSwitcher = () => {
       setDefaultPrices()
     }
   });
-
-  console.log
 };
