@@ -1,3 +1,5 @@
+// Файл theme.js
+// Файл theme.js
 export const useTheme = () => {
   const themeTarget = document.querySelector('[data-theme]');
   const themeSwitcher = document.querySelector('[data-theme-switcher]');
@@ -15,9 +17,96 @@ export const useTheme = () => {
     if (themeTargetDataset.theme === 'light') {
       themeTargetDataset.theme = 'dark';
       localStorage.setItem('theme', 'dark');
+
+      ymaps3.ready.then(() => {
+        const newWaterLayer = new window.YMapDefaultSchemeLayer({
+          theme: 'light',
+          zIndex: 0,
+          background: {
+            stylers: [
+              {
+                opacity: 0,
+              },
+            ],
+          },
+          customization: [
+            {
+              tags: {
+                all: ['water'],
+              },
+              stylers: [
+                {
+                  color: '#1e1d25',
+                },
+              ],
+            },
+            {
+              tags: {
+                all: ['landscape'],
+              },
+              stylers: [
+                {
+                  color: "#acacb9",
+                },
+              ],
+            },
+          ],
+        });
+
+        window.map.removeChild(window.waterLayer); 
+
+        window.map.addChild(newWaterLayer);
+
+        window.waterLayer = newWaterLayer;
+      });
+
     } else {
       themeTargetDataset.theme = 'light';
       localStorage.setItem('theme', 'light');
+
+      ymaps3.ready.then(() => {
+        const newWaterLayer = new window.YMapDefaultSchemeLayer({
+          theme: 'light',
+          zIndex: 0,
+          background: {
+            stylers: [
+              {
+                opacity: 0,
+              },
+            ],
+          },
+          customization: [
+            {
+              tags: {
+                all: ['water'],
+              },
+              stylers: [
+                {
+                  color: '#FFF',
+                },
+              ],
+            },
+            {
+              tags: {
+                all: ['landscape'],
+              },
+              stylers: [
+                {
+                  color: "#acacb9",
+                },
+              ],
+            },
+          ],
+        });
+
+
+        window.map.removeChild(window.waterLayer); 
+
+
+        window.map.addChild(newWaterLayer);
+
+        window.waterLayer = newWaterLayer;
+      });
     }
   });
 };

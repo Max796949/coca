@@ -1,60 +1,62 @@
+// Файл map.js
 export const useMap = () => {
-  initMap();
-
+  // Код карты:
   async function initMap() {
     await ymaps3.ready;
 
-    const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+    const { YMap, YMapDefaultSchemeLayer, YMapPlacemark } = ymaps3;
 
-    // Иницилиазируем карту
-    const map = new YMap(
-      document.getElementById('map'),
+    let currentTheme = localStorage.getItem('theme') || 'light';
 
-      {
-        location: {
-          center: [28.090661, 30.764496],
-          zoom: 2,
-        },
+    // Создаем карту
+    const map = new YMap(document.getElementById('map'), {
+      location: {
+        center: [47.024643, 28.831580],
+        zoom: 2,
       },
-    );
+    });
 
-    const mapContainer = document.getElementById('map');
-
-    const waterElement = 'water';
-
-    map.addChild(new YMapDefaultSchemeLayer({
-    customization: [
-      {
-          tags: { all: [waterElement] },
-          elements: 'geometry',
+    const waterLayer = new YMapDefaultSchemeLayer({
+      theme: 'light',
+      zIndex: 0,
+      background: {
+        stylers: [
+          {
+            opacity: 0,
+          },
+        ],
+      },
+      customization: [
+        {
+          tags: {
+            all: ['water'],
+          },
           stylers: [
-              {
-                  "color": "#fff",
-              }
-          ]
-      },
+            {
+              color: currentTheme === 'dark' ? '#1e1d25' : '#FFF',
+            },
+          ],
+        },
+        {
+          tags: {
+            all: ['landscape'],
+          },
+          stylers: [
+            {
+              color: "#acacb9",
+            },
+          ],
+        },
+      ],
+    });
 
-      {
-        tags: { all: ['landscape']},
-        elements: 'geometry.fill',
-        stylers: [
-          {
-            "color": "#acacb9"
-          }
-        ]
-      },
-      {
-        tags: { all: ['landscape']},
-        types: "polyline",
-        elements: 'geometry.outline',
-        stylers: [
-          {
-            "color": "#000"
-          }
-        ]
-      },
-  ]
-}));
+    map.addChild(waterLayer);
 
+    window.YMapDefaultSchemeLayer = YMapDefaultSchemeLayer;
+
+    window.waterLayer = waterLayer;
+    window.map = map;
   }
+
+  initMap();
 };
