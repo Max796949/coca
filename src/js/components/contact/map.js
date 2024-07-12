@@ -1,6 +1,6 @@
-// Файл map.js
+
 export const useMap = () => {
-  // Код карты:
+
   async function initMap() {
     await ymaps3.ready;
 
@@ -8,7 +8,6 @@ export const useMap = () => {
 
     let currentTheme = localStorage.getItem('theme') || 'light';
 
-    // Создаем карту
     const map = new YMap(document.getElementById('map'), {
       location: {
         center: [47.024643, 28.831580],
