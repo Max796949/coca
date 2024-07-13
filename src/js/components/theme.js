@@ -1,5 +1,3 @@
-// Файл theme.js
-// Файл theme.js
 export const useTheme = () => {
   const themeTarget = document.querySelector('[data-theme]');
   const themeSwitcher = document.querySelector('[data-theme-switcher]');

@@ -1,21 +1,25 @@
-
 export const useMap = () => {
+  let waterLayer;
 
   async function initMap() {
     await ymaps3.ready;
 
-    const { YMap, YMapDefaultSchemeLayer, YMapPlacemark } = ymaps3;
+    const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
+    const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1'); // Импортируем YMapDefaultMarker
 
     let currentTheme = localStorage.getItem('theme') || 'light';
 
     const map = new YMap(document.getElementById('map'), {
       location: {
-        center: [47.024643, 28.831580],
+        center: [47.024643, 28.83158],
         zoom: 2,
       },
     });
 
-    const waterLayer = new YMapDefaultSchemeLayer({
+    const featuresLayer = new YMapDefaultFeaturesLayer();
+    map.addChild(featuresLayer);
+
+    waterLayer = new YMapDefaultSchemeLayer({
       theme: 'light',
       zIndex: 0,
       background: {
@@ -42,7 +46,7 @@ export const useMap = () => {
           },
           stylers: [
             {
-              color: "#acacb9",
+              color: '#acacb9',
             },
           ],
         },
@@ -51,8 +55,16 @@ export const useMap = () => {
 
     map.addChild(waterLayer);
 
-    window.YMapDefaultSchemeLayer = YMapDefaultSchemeLayer;
+    map.addChild(
+      new YMapDefaultMarker({
+        coordinates: [130, -25],
+        title: 'Yogja, INA',
+        subtitle: '100 Smith Street<br>Collingwood VIC 3066 AU',
+        color: 'blue',
+      }),
+    );
 
+    window.YMapDefaultSchemeLayer = YMapDefaultSchemeLayer;
     window.waterLayer = waterLayer;
     window.map = map;
   }
