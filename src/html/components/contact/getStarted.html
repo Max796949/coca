@@ -8,14 +8,14 @@
           >hellosansbrothers@gmail.com</a
         >
       </p>
-      <form action="" class="get-started__form">
+      <form action="" class="get-started__form" id="form">
         <div class="get-started__form-top">
           <label class="get-started__form-label">
             <span class="get-started__form-label-text text-p-small">First Name</span>
             <input
               type="text"
-              required
-              class="get-started__form-input text-p-small get-started__form-input-small"
+              red
+              class="get-started__form-input input text-p-small get-started__form-input-small"
               name="first-name"
               placeholder="First Name"
             />
@@ -23,8 +23,9 @@
           <label class="get-started__form-label">
             <span class="get-started__form-label-text text-p-small">Last Name</span>
             <input
-            required
+              red
               type="text"
+              minlength="3"
               class="get-started__form-input text-p-small get-started__form-input-small"
               name="last-name"
               placeholder="Last Name"
@@ -35,8 +36,8 @@
           <span class="get-started__form-label-text text-p-small">Email</span>
           <input
             type="email"
-            required
-            class="get-started__form-input text-p-small"
+            red
+            class="get-started__form-input get-started__form-email text-p-small"
             name="email"
             placeholder="you@company.com"
           />
@@ -45,9 +46,9 @@
           <span class="get-started__form-label-text text-p-small">Phone</span>
           <input
             type="tel"
-            required
+            red
             id="phone"
-            class="get-started__form-input text-p-small"
+            class="get-started__form-input get-started__form-phone text-p-small"
             name="phone"
             placeholder="Enter your phone"
           />
@@ -58,7 +59,7 @@
             type="text"
             class="get-started__form-input get-started__form-input--textarea text-p-small"
             name="message"
-            required
+            red
             placeholder="Leave us a message..."
           ></textarea>
           <button class="get-started__form-btn button-form">Get started</button>

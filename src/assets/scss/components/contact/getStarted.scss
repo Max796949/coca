@@ -90,6 +90,8 @@
       @include flex-column;
       width: 100%;
 
+      
+
       &-text {
         display: inline-block;
         margin-bottom: 6px;
@@ -109,8 +111,16 @@
       font-size: 14px;
       color: #1d1e25;
 
+      &.error {
+        border: 1px solid #F58A8A;
+      }
+
+      
+
       &--small {
         width: 240px;
+
+
 
           @include mobile {
             width: 100%;
@@ -143,4 +153,6 @@
       display: none;
     }
   }
+
+  
 }
