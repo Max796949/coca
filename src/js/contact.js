@@ -1,5 +1,5 @@
 import 'swiper/css';
-import '../assets/scss/contact.scss';
+import '/scss/contact.scss';
 
 import { useMap } from './components/contact/map.js';
 import { useTheme } from './components/theme.js';
