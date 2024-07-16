@@ -1,0 +1,130 @@
+.team {
+  &__title {
+    margin-bottom: 24px;
+    max-width: 903px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+  }
+
+  &__descr {
+    margin-bottom: 80px;
+    max-width: 534px;
+    font-weight: 500;
+    line-height: 1.77778;
+    color: var(--neutral-color-150);
+  }
+
+  .team__swiper {
+    overflow: hidden;
+    margin-bottom: 100px;
+    position: relative;
+    &-btns {
+      @include flex-all-center;
+      position: absolute;
+      top: 174px;
+      left: 394px;
+      z-index: var(--z-index-2);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translateX(-50%);
+
+      @include mini-desktop {
+        display: none;
+      }
+    }
+  }
+
+
+  .slider {
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      max-width: 374px;
+
+      &-jobtitle {
+        font-weight: 500;
+        line-height: 1.5;
+        color: var(--neutral-color-150);
+      }
+
+    }
+
+    &__name {
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--neutral-color-100);
+    }
+
+    &__socials {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 8px;;
+
+        &-logo {
+            background-color: var(--neutral-color-80);
+            width: 32px;
+            height: 32px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+
+            &:hover {
+                box-shadow: 0 0 0 1px var(--neutral-color-100);
+                background-color: #7cd4f7;
+            }
+        }
+    }
+  }
+
+  &__bottom {
+      margin-bottom: 160px;
+      display: flex;
+      justify-content: space-between;
+      gap: 71px;
+
+      @include tablet {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      @include small-mobile {
+        margin-bottom: 40px;
+      }
+
+    &-title {
+        text-align: center;
+      max-width: 626px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+    }
+
+    &-text {
+      max-width: 506px;
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.77778;
+      color: var(--neutral-color-150);
+    }
+
+    &-link {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--neutral-color-100);
+      transition: border 1s;
+
+      &:hover {
+        border-bottom: 1px solid var(--neutral-color-100);
+      }
+    }
+  }
+}

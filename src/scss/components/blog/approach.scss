@@ -1,0 +1,124 @@
+.approach {
+  padding-bottom: 160px;
+
+  &__inner {
+    padding-left: 105px;
+
+    @include tablet {
+        padding-left: 15px;
+    }
+  }
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--neutral-color-100);
+  }
+
+  &__text {
+    max-width: 940px;
+    margin-bottom: 56px;
+    font-weight: 400;
+    line-height: 1.77778;
+    color: var(--neutral-color-100);
+  }
+
+  &__author {
+    display: flex;
+    gap: 48px;
+
+    @include small-tablet {
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @include small-tablet {
+        align-items: center;
+    }
+  }
+
+  &__socials {
+    margin-bottom: 14px;
+    display: flex;
+    gap: 32px;
+
+    @include mobile {
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    &-list {
+      display: flex;
+      gap: 32px;
+    }
+
+    &-logo {
+      background-color: var(--neutral-color-80);
+      width: 32px;
+      height: 32px;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition);
+
+      &:hover {
+        box-shadow: 0 0 0 1px var(--neutral-color-100);
+        background-color: #e4999f;
+      }
+    }
+
+    &-share {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.625;
+      color: var(--neutral-color-100);
+      transition: all var(--transition);
+
+      &:hover {
+        border-bottom: 1px solid var(--neutral-color-100);
+      }
+    }
+  }
+
+  &__written {
+    margin-bottom: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--neutral-color-150);
+  }
+
+  &__name {
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.3125;
+    letter-spacing: -0.03em;
+    color: var(--neutral-color-100);
+  }
+
+  &__jobtitle {
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.625;
+    color: var(--neutral-color-150);
+  }
+
+  &__descr {
+    max-width: 650px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.77778;
+    color: var(--neutral-color-100);
+
+    @include small-tablet {
+        max-width: 450px;
+    }
+  }
+}

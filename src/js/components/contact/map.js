@@ -5,7 +5,7 @@ export const useMap = () => {
     await ymaps3.ready;
 
     const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer } = ymaps3;
-    const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1'); // Импортируем YMapDefaultMarker
+    const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
 
     let currentTheme = localStorage.getItem('theme') || 'light';
 

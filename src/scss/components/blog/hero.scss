@@ -1,0 +1,88 @@
+.hero {
+  &__inner {
+    padding-left: 105px;
+
+    @include tablet {
+      padding-left: 15px;
+    }
+  }
+  padding-top: 80px;
+  padding-bottom: 56px;
+
+  &__title {
+    max-width: 970px;
+    margin-bottom: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      font-size: 45px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 24px;
+    display: flex;
+    gap: 426px;
+    align-items: flex-end;
+
+    @include tablet {
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    &-data {
+      font-weight: 500;
+      line-height: 1.5;
+      color: var(--neutral-color-150);
+    }
+
+    &-pi {
+      display: flex;
+      gap: 24px;
+
+      &-intro {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      &-name {
+        font-weight: 600;
+        line-height: 1.44444;
+        color: var(--neutral-color-100);
+      }
+
+      &-jobtitle {
+        font-weight: 500;
+        line-height: 1.625;
+        color: var(--neutral-color-150);
+      }
+    }
+  }
+
+  &__table {
+    align-self: center;
+    margin-bottom: 80px;
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__blog {
+    max-width: 940px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.77778;
+    color: var(--neutral-color-100);
+  }
+}

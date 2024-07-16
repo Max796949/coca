@@ -1,0 +1,95 @@
+.idea {
+  padding-bottom: 160px;
+  position: relative;
+
+  @include tablet {
+    padding-bottom: 110px;
+  }
+  @include tablet {
+    padding-bottom: 60px;
+  }
+
+  &::before {
+    top: -470px;
+    overflow: hidden;
+    left: 201px;
+    filter: blur(220px);
+    opacity: 0.23;
+    width: 551px;
+    height: 551px;
+    background: #fa7515;
+
+    @include tablet {
+      left: -10%;
+    }
+
+    @include mobile {
+      left: -30%;
+      width: 351px;
+    height: 351px;
+    }
+  }
+
+  &::after {
+    right: 5%;
+    bottom: -80%;
+    opacity: 0.3;
+    border-radius: 100%;
+    background: var(--success-color-70);
+    filter: blur(180px);
+    width: 525px;
+    height: 525px;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 197px;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    padding-top: 85px;
+    padding-bottom: 85px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__descr {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 86px;
+    max-width: 552px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      padding-top: 0;
+      max-width: 1000px;
+      padding-left: 20px;
+    }
+  }
+}

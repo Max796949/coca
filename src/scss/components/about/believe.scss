@@ -1,0 +1,70 @@
+.believe {
+  padding-bottom: 165px;
+
+  @include tablet {
+    padding-bottom: 120px;
+  }
+
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
+  &__container {
+    max-width: 1440px;
+    padding-right: 0;
+
+  }
+
+  &__swiper {
+    position: relative;
+    &-btns {
+      @include flex-all-center;
+      position: absolute;
+      top: 99px;
+      left: 476px;
+      z-index: var(--z-index-2);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translateX(-50%);
+
+      @include mini-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__slider-2 {
+    @include mini-desktop {
+      height: 100%;
+    }
+
+    @include small-tablet {
+      order: -1;
+    }
+  }
+
+  &__title {
+    margin-top: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: var(--neutral-color-100);
+  }
+
+  &__descr {
+    margin-bottom: 7px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--neutral-color-150);
+  }
+
+  &__btn {
+    color: var(--neutral-color-10);
+    padding: 16px 34px;
+    background-color: var(--neutral-color-100);
+  }
+}
