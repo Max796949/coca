@@ -29,6 +29,7 @@
       border: 1px solid var(--neutral-color-40);
       padding: 56px 48px;
       background-color: #fff;
+      
 
       @include tablet {
         left: var(--container-padding);
@@ -89,6 +90,7 @@
       margin-bottom: 24px;
       @include flex-column;
       width: 100%;
+      color: black;
 
       
 
@@ -156,3 +158,5 @@
 
   
 }
+
+
