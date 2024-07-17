@@ -19,7 +19,7 @@ export const usePartnersSlider = () => {
   function initSwiper() {
     partnersSlider = new Swiper('.partners__slider', {
       modules: [Autoplay],
-      speed: 700,
+      speed: 1000,
       loop: true,
       slidesPerView: 1.5,
       spaceBetween: 15,
@@ -31,7 +31,6 @@ export const usePartnersSlider = () => {
       breakpoints: {
         651: {
           slidesPerView: 3,
-          spaceBetween: 30,
         },
         451: {
           slidesPerView: 2,
