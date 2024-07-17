@@ -1,4 +1,5 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 
 export const usePartnersSlider = () => {
