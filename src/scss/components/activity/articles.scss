@@ -1,0 +1,109 @@
+.articles {
+
+  padding-top: 160px;
+  padding-bottom: 176px;
+
+  @include mobile {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+  }
+
+  &__text {
+    font-weight: 500;
+    line-height: 1.77778;
+    color: var(--neutral-color-150);
+  }
+
+  &__swiper {
+    &-title {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      max-width: 407px;
+      font-weight: 600;
+      line-height: 1.3125;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+    }
+
+    &-text {
+      margin-bottom: 24px;
+      max-width: 403px;
+      font-weight: 500;
+      line-height: 1.77778;
+      color: var(--neutral-color-150);
+    }
+
+    &__button {
+      padding: 16px 32px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      color: var(--neutral-color-100);
+      border: 1px solid #ced1d8;
+      border-radius: 100px;
+    }
+  }
+
+  &__flex {
+    @include mini-desktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__btns {
+    @include flex-align-center;
+    justify-content: flex-end;
+    gap: 16px;
+    transform: translateY(-55px);
+
+    @include tablet {
+      justify-content: flex-start;
+      transform: translateY(0px);
+      margin-top: 20px;
+      margin-bottom: 25px;
+      
+    }
+  }
+
+  &__btn {
+    @include flex-all-center;
+    border: 1px solid var(--neutral-color-40);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+
+    @include small-mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      background-color: var(--neutral-color-100);
+      border-color: var(--neutral-color-100);
+
+      & svg path {
+        fill: var(--neutral-color-10);
+      }
+    }
+
+    svg path {
+      transition: fill var(--transition);
+    }
+
+    &--prev {
+      transform: rotate(-180deg);
+    }
+  }
+}

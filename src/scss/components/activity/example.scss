@@ -1,0 +1,65 @@
+.example {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @include mobile {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  background: var(--black-bg-color);
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: end;
+    gap: 32px;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+        gap: 68px;
+    }
+
+    @include small-mobile {
+        gap: 48px
+    }
+
+    &-item {
+
+        &-1 {
+            @include mobile {
+                align-self: end;
+            }
+        }
+      &-2 {
+        align-self: start;
+
+        @include mobile {
+            align-self: end;
+            
+        }
+      }
+    }
+
+    &-title {
+      margin-top: 24px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #fff;
+
+      &-2 {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+      }
+    }
+
+    &-text {
+        max-width: 515px;
+      font-weight: 500;
+      line-height: 1.77778;
+      color: #7e8492;
+    }
+  }
+}
